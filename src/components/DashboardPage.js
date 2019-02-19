@@ -1,8 +1,13 @@
 import React from 'react';
+import BlogSummary from './BlogSummary';
+import BlogListFilters from './BlogListFilters';
+import BlogList from './BlogList';
 
 const DashboardPage = () => (
   <div>
-    <h1>dashoard</h1>
+    <BlogSummary />
+    <BlogListFilters />
+    <BlogList />
   </div>
 );
 
