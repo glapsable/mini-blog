@@ -4,14 +4,17 @@ import { SingleDatePicker } from 'react-dates';
 import PropTypes from 'prop-types';
 
 class PostForm extends React.Component {
-  state = {
-    title: '',
-    amount: '',
-    description: '',
-    createdAt: moment(),
-    calendarFocused: false,
-    error: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: props.post ? props.post.title : '',
+      amount: props.post ? (props.post.amount / 100).toString() : '',
+      description: props.post ? props.post.description : '',
+      createdAt: props.post ? moment(props.post.createdAt) : moment(),
+      calendarFocused: false,
+      error: '',
+    };
+  }
 
   onTitleChange = (e) => {
     const title = e.target.value;
@@ -99,8 +102,19 @@ class PostForm extends React.Component {
   }
 }
 
+PostForm.defaultProps = {
+  post: null,
+};
+
 PostForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  post: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    amount: PropTypes.number,
+    createdAt: PropTypes.number,
+  }),
 };
 
 export default PostForm;
