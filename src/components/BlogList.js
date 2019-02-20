@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import selectPosts from '../selectors/posts';
 import BlogListItem from './BlogListItem';
 
 const BlogList = (props) => {
@@ -25,7 +26,7 @@ BlogList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  posts: state.posts,
+  posts: selectPosts(state.posts, state.filters),
 });
 
 export default connect(mapStateToProps)(BlogList);
