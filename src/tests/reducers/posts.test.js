@@ -39,6 +39,20 @@ test('should edit post by id from posts array', () => {
   ]);
 });
 
+test('should not edit post if id not found', () => {
+  const updates = {
+    title: 'updatedTitle',
+    description: 'updatedDescription',
+  };
+  const action = {
+    type: 'EDIT_POST',
+    id: -1,
+    updates,
+  };
+  const state = postsReducer(posts, action);
+  expect(state).toEqual(posts);
+});
+
 test('should remove post by id from state', () => {
   const action = {
     type: 'REMOVE_POST',
