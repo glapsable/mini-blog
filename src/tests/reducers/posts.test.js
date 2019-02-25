@@ -1,6 +1,14 @@
 import postsReducer from '../../reducers/posts';
 import posts from '../fixtures/posts';
 
+test('should set default state', () => {
+  const action = {
+    type: '@@INIT',
+  };
+  const state = postsReducer(undefined, action);
+  expect(state).toEqual([]);
+});
+
 test('should add new post to posts state', () => {
   const action = {
     type: 'ADD_POST',
