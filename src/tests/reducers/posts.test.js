@@ -50,3 +50,12 @@ test('should remove post by id from state', () => {
     posts[2],
   ]);
 });
+
+test('should not remove post if id not found', () => {
+  const action = {
+    type: 'REMOVE_POST',
+    id: '777',
+  };
+  const state = postsReducer(posts, action);
+  expect(state).toEqual(posts);
+});
