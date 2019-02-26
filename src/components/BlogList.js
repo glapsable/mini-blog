@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import selectPosts from '../selectors/posts';
 import BlogListItem from './BlogListItem';
 
-const BlogList = (props) => {
+export const BlogList = (props) => {
   const { posts } = props;
   return (
     <div>

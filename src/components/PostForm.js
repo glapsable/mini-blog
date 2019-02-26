@@ -49,6 +49,7 @@ class PostForm extends React.Component {
     } = this.state;
     const { onSubmit } = this.props;
     e.preventDefault();
+
     if (!title || !description) {
       this.setState(() => ({ error: 'Please fill title and description' }));
     } else {

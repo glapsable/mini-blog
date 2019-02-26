@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlogListItem with given post correctly 1`] = `
+<Link
+  replace={false}
+  to="/edit/ccc"
+>
+  <h3>
+    ccc
+  </h3>
+  <p>
+    ccc
+  </p>
+  <p>
+    Trip amount: 
+    0,50 PLN
+  </p>
+  <p>
+    8th January 1970
+  </p>
+</Link>
+`;

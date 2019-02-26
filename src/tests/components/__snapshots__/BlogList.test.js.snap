@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BlogList correctly with posts 1`] = `
+<div>
+  <BlogListItem
+    amount={0}
+    createdAt={0}
+    description="aaa"
+    id="aaa"
+    key="aaa"
+    title="aaa"
+  />
+  <BlogListItem
+    amount={1500}
+    createdAt={-345600000}
+    description="bbb"
+    id="bbb"
+    key="bbb"
+    title="bbb"
+  />
+  <BlogListItem
+    amount={50}
+    createdAt={604800000}
+    description="ccc"
+    id="ccc"
+    key="ccc"
+    title="ccc"
+  />
+</div>
+`;
+
+exports[`should renders BlogList correctly with no posts 1`] = `
+<div>
+  <p>
+    There no posts
+  </p>
+</div>
+`;
