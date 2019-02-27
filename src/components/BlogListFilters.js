@@ -6,7 +6,7 @@ import {
   setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate,
 } from '../actions/filters';
 
-class BlogListFilters extends React.Component {
+export class BlogListFilters extends React.Component {
   state = {
     calendarFocused: null,
   };

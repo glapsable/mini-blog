@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import PostForm from './PostForm';
 import { editPost, removePost } from '../actions/posts';
 
-class EditPostPage extends React.Component {
+export class EditPostPage extends React.Component {
   onEditHandler = (updatedPost) => {
     const { post, editPostDispatch, history } = this.props;
     editPostDispatch(post.id, updatedPost);

@@ -82,9 +82,16 @@ test('should set description on textarea change', () => {
   expect(wrapper.state('description')).toBe(value);
 });
 
-test('should set createdAd on SingleDatePicker change', () => {
+test('should set createdAt on SingleDatePicker change', () => {
   const now = moment();
   const wrapper = shallow(<PostForm onSubmit={() => {}} />);
-  wrapper.find('SingleDatePicker').prop('onDateChange')(now);
-  expect(wrapper.state('cretedAt')).toEqual(now);
+  wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(now);
+  expect(wrapper.state('createdAt')).toEqual(now);
+});
+
+test('should set calendarFocused on change', () => {
+  const focused = true;
+  const wrapper = shallow(<PostForm onSubmit={() => {}} />);
+  wrapper.find('withStyles(SingleDatePicker)').prop('onFocusChange')({ focused });
+  expect(wrapper.state('calendarFocused')).toBe(focused);
 });

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { addPost } from '../actions/posts';
 import PostForm from './PostForm';
 
-class AddPostPage extends React.Component {
+export class AddPostPage extends React.Component {
   onSubmit = (post) => {
     const { addPostDispatch, history } = this.props;
     addPostDispatch(post);
